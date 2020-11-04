@@ -1,0 +1,754 @@
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: black;
+    }
+
+    main {
+        font-family: "Heebo", sans-serif;
+    }
+
+    .landing {
+        min-height: 100vh;
+        background: url("/images/hero.jpg") no-repeat center;
+        background-size: cover;
+        display: block;
+    }
+
+    #logo {
+        font-family: "Lobster", cursive;
+        font-weight: lighter;
+        font-size: 2rem;
+        color: whitesmoke;
+    }
+
+    .big-text {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        font-size: 5rem;
+        font-family: "Lobster", cursive;
+        color: #ffffff;
+    }
+
+    .intro {
+        background: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1080;
+    }
+
+    .slider {
+        background: rgb(181, 200, 236);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(100%);
+        z-index: 1090;
+    }
+
+    .intro-text {
+        color: rgb(233, 233, 233);
+        font-family: "Heebo", sans-serif;
+        font-size: 3rem;
+    }
+
+    .hide {
+        background: black;
+        overflow: hidden;
+    }
+
+    .hide span {
+        transform: translateY(100%);
+        display: inline-block;
+    }
+
+    .alt {
+        min-height: 100vh;
+        margin-top: 10%;
+    }
+
+    .baslik {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #ffffff;
+    }
+
+    .yazi {
+        text-align: center;
+        font-size: 1.15rem;
+        color: #ffffff;
+    }
+
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+    .custom-toggler.navbar-toggler {
+        border-color: #ffffff
+    }
+
+    .b-item a {
+        color: #ffffff !important;
+    }
+
+    .fiyu-fiyu {
+        margin-top: 50px;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr 0.5fr;
+        grid-template-rows: 0.2fr;
+        gap: 0px 0px;
+        justify-content: center;
+        align-items: center;
+        grid-template-areas:
+            "sol orta sag";
+        padding-bottom: 30px;
+
+    }
+
+    .footer ul {
+        list-style-type: none;
+    }
+
+    .sag {
+        grid-area: sag;
+    }
+
+    .orta {
+        grid-area: orta;
+        text-align: center;
+    }
+
+    .sol {
+        grid-area: sol;
+        text-align: center;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: black;
+    }
+
+    main {
+        font-family: "Heebo", sans-serif;
+    }
+
+    .landing {
+        min-height: 100vh;
+        background: url("/images/hero.jpg") no-repeat center;
+        background-size: cover;
+        display: block;
+    }
+
+    #logo {
+        font-family: "Lobster", cursive;
+        font-weight: lighter;
+        font-size: 2rem;
+        color: whitesmoke;
+    }
+
+    .big-text {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        font-size: 5rem;
+        font-family: "Lobster", cursive;
+        color: #ffffff;
+    }
+
+    .intro {
+        background: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1080;
+    }
+
+    .slider {
+        background: rgb(181, 200, 236);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(100%);
+        z-index: 1090;
+    }
+
+    .intro-text {
+        color: rgb(233, 233, 233);
+        font-family: "Heebo", sans-serif;
+        font-size: 3rem;
+    }
+
+    .hide {
+        background: black;
+        overflow: hidden;
+    }
+
+    .hide span {
+        transform: translateY(100%);
+        display: inline-block;
+    }
+
+    .alt {
+        min-height: 100vh;
+        margin-top: 10%;
+    }
+
+    .baslik {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #ffffff;
+    }
+
+    .yazi {
+        text-align: center;
+        font-size: 1.15rem;
+        color: #ffffff;
+    }
+
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+    .custom-toggler.navbar-toggler {
+        border-color: #ffffff
+    }
+
+    .b-item a {
+        color: #ffffff !important;
+    }
+
+    .fiyu-fiyu {
+        margin-top: 50px;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr 0.5fr;
+        grid-template-rows: 0.2fr;
+        gap: 0px 0px;
+        justify-content: center;
+        align-items: center;
+        grid-template-areas:
+            "sol orta sag";
+        padding-bottom: 30px;
+
+    }
+
+    .footer ul {
+        list-style-type: none;
+    }
+
+    .sag {
+        grid-area: sag;
+    }
+
+    .orta {
+        grid-area: orta;
+        text-align: center;
+    }
+
+    .sol {
+        grid-area: sol;
+        text-align: center;
+    }
+
+    #form-main {
+        width: 100%;
+        float: center;
+        align-self: center;
+        width: 450px;
+        margin-left: 15%;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: black;
+    }
+
+    main {
+        font-family: "Heebo", sans-serif;
+    }
+
+    .landing {
+        min-height: 100vh;
+        background: url("/images/hero.jpg") no-repeat center;
+        background-size: cover;
+        display: block;
+    }
+
+    #logo {
+        font-family: "Lobster", cursive;
+        font-weight: lighter;
+        font-size: 2rem;
+        color: whitesmoke;
+    }
+
+    .big-text {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        font-size: 5rem;
+        font-family: "Lobster", cursive;
+        color: #ffffff;
+    }
+
+    .intro {
+        background: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1080;
+    }
+
+    .slider {
+        background: rgb(181, 200, 236);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(100%);
+        z-index: 1090;
+    }
+
+    .intro-text {
+        color: rgb(233, 233, 233);
+        font-family: "Heebo", sans-serif;
+        font-size: 3rem;
+    }
+
+    .hide {
+        background: black;
+        overflow: hidden;
+    }
+
+    .hide span {
+        transform: translateY(100%);
+        display: inline-block;
+    }
+
+    .alt {
+        min-height: 100vh;
+        margin-top: 10%;
+    }
+
+    .baslik {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #ffffff;
+    }
+
+    .yazi {
+        text-align: center;
+        font-size: 1.15rem;
+        color: #ffffff;
+    }
+
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+    .custom-toggler.navbar-toggler {
+        border-color: #ffffff
+    }
+
+    .b-item a {
+        color: #ffffff !important;
+    }
+
+    .fiyu-fiyu {
+        margin-top: 50px;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr 0.5fr;
+        grid-template-rows: 0.2fr;
+        gap: 0px 0px;
+        justify-content: center;
+        align-items: center;
+        grid-template-areas:
+            "sol orta sag";
+        padding-bottom: 30px;
+
+    }
+
+    .footer ul {
+        list-style-type: none;
+    }
+
+    .sag {
+        grid-area: sag;
+    }
+
+    .orta {
+        grid-area: orta;
+        text-align: center;
+    }
+
+    .sol {
+        grid-area: sol;
+        text-align: center;
+    }
+
+    #form-main {
+        width: 100%;
+        float: center;
+        align-self: center;
+        width: 450px;
+        margin-left: 20%;
+    }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: black;
+    }
+
+    main {
+        font-family: "Heebo", sans-serif;
+    }
+
+    .landing {
+        min-height: 100vh;
+        background: url("/images/hero.jpg") no-repeat center;
+        background-size: cover;
+        display: block;
+    }
+
+    #logo {
+        font-family: "Lobster", cursive;
+        font-weight: lighter;
+        font-size: 2rem;
+        color: whitesmoke;
+    }
+
+    .big-text {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        font-size: 5rem;
+        font-family: "Lobster", cursive;
+        color: #ffffff;
+    }
+
+    .intro {
+        background: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1080;
+    }
+
+    .slider {
+        background: rgb(181, 200, 236);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(100%);
+        z-index: 1090;
+    }
+
+    .intro-text {
+        color: rgb(233, 233, 233);
+        font-family: "Heebo", sans-serif;
+        font-size: 3rem;
+    }
+
+    .hide {
+        background: black;
+        overflow: hidden;
+    }
+
+    .hide span {
+        transform: translateY(100%);
+        display: inline-block;
+    }
+
+    .alt {
+        min-height: 100vh;
+        margin-top: 10%;
+    }
+
+    .baslik {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #ffffff;
+    }
+
+    .yazi {
+        text-align: center;
+        font-size: 1.15rem;
+        color: #ffffff;
+    }
+
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+    .custom-toggler.navbar-toggler {
+        border-color: #ffffff
+    }
+
+    .b-item a {
+        color: #ffffff !important;
+    }
+
+    .fiyu-fiyu {
+        margin-top: 50px;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr 0.5fr;
+        grid-template-rows: 0.2fr;
+        gap: 0px 0px;
+        justify-content: center;
+        align-items: center;
+        grid-template-areas:
+            "sol orta sag";
+        padding-bottom: 30px;
+
+    }
+
+    .footer ul {
+        list-style-type: none;
+    }
+
+    .sag {
+        grid-area: sag;
+    }
+
+    .orta {
+        grid-area: orta;
+        text-align: center;
+    }
+
+    .sol {
+        grid-area: sol;
+        text-align: center;
+    }
+
+    #form-main {
+        width: 100%;
+        float: center;
+        align-self: center;
+        width: 450px;
+        margin-left: 30%;
+    }
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: black;
+    }
+
+    main {
+        font-family: "Heebo", sans-serif;
+    }
+
+    .landing {
+        min-height: 100vh;
+        background: url("/images/hero.jpg") no-repeat center;
+        background-size: cover;
+        display: block;
+    }
+
+    #logo {
+        font-family: "Lobster", cursive;
+        font-weight: lighter;
+        font-size: 2rem;
+        color: whitesmoke;
+    }
+
+    .big-text {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        font-size: 5rem;
+        font-family: "Lobster", cursive;
+        color: #ffffff;
+    }
+
+    .intro {
+        background: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1080;
+    }
+
+    .slider {
+        background: rgb(181, 200, 236);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(100%);
+        z-index: 1090;
+    }
+
+    .intro-text {
+        color: rgb(233, 233, 233);
+        font-family: "Heebo", sans-serif;
+        font-size: 3rem;
+    }
+
+    .hide {
+        background: black;
+        overflow: hidden;
+    }
+
+    .hide span {
+        transform: translateY(100%);
+        display: inline-block;
+    }
+
+    .alt {
+        min-height: 100vh;
+        margin-top: 10%;
+    }
+
+    .baslik {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #ffffff;
+    }
+
+    .yazi {
+        text-align: center;
+        font-size: 1.15rem;
+        color: #ffffff;
+    }
+
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+    .custom-toggler.navbar-toggler {
+        border-color: #ffffff
+    }
+
+    .b-item a {
+        color: #ffffff !important;
+        text-decoration: none !important;
+    }
+
+
+
+    .fiyu-fiyu {
+        margin-top: 50px;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr 0.5fr;
+        grid-template-rows: 0.2fr;
+        gap: 0px 0px;
+        justify-content: center;
+        align-items: center;
+        grid-template-areas:
+            "sol orta sag";
+        padding-bottom: 30px;
+
+    }
+
+    .footer ul {
+        list-style-type: none;
+    }
+
+    .sag {
+        grid-area: sag;
+    }
+
+    .orta {
+        grid-area: orta;
+        text-align: center;
+    }
+
+    .sol {
+        grid-area: sol;
+        text-align: center;
+    }
+
+}
