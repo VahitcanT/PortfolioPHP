@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: coral !important;
+    font-family: "Heebo", sans-serif;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .contact {
+        position: relative;
+        z-index: 99999;
+        text-align: right;
+        padding-top: 70px;
+        padding-right: 90px;
+    }
+
+    .contact p {
+        padding-bottom: 5px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .resim {
+        position: absolute;
+        z-index: 0;
+        width: 100vw;
+
+    }
+
+
+    #logo {
+        font-family: "Lobster", cursive;
+        font-weight: lighter;
+        font-size: 2rem;
+    }
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .contact {
+        position: relative;
+        z-index: 99999;
+        text-align: right;
+        padding-top: 70px;
+        padding-right: 90px;
+    }
+
+    .contact p {
+        padding-bottom: 5px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .resim {
+        position: absolute;
+        z-index: 0;
+        width: 100vw;
+    }
+
+
+    #logo {
+        font-family: "Lobster", cursive;
+        font-weight: lighter;
+        font-size: 2rem;
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .contact {
+        position: relative;
+        z-index: 99999;
+        text-align: right;
+        padding-top: 170px;
+        padding-right: 150px;
+        font-size: 1.5rem;
+    }
+
+    .contact p {
+        padding-bottom: 5px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .resim {
+        position: absolute;
+        z-index: 0;
+        width: 100vw;
+    }
+
+
+    #logo {
+        font-family: "Lobster", cursive;
+        font-weight: lighter;
+        font-size: 2rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .contact {
+        position: relative;
+        z-index: 99999;
+        text-align: right;
+        padding-top: 170px;
+        padding-right: 150px;
+        font-size: 2rem;
+
+    }
+
+    .contact p {
+        padding-bottom: 5px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .resim {
+        position: absolute;
+        z-index: 0;
+        width: 100vw;
+    }
+
+
+    #logo {
+        font-family: "Lobster", cursive;
+        font-weight: lighter;
+        font-size: 2rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .contact {
+        position: relative;
+        z-index: 99999;
+        text-align: right;
+        padding-top: 370px;
+        padding-right: 450px;
+        font-size: large;
+    }
+
+    .contact p {
+        padding-bottom: 5px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .resim {
+        position: absolute;
+        z-index: 0;
+        width: 100vw;
+    }
+
+
+    #logo {
+        font-family: "Lobster", cursive;
+        font-weight: lighter;
+        font-size: 2rem;
+    }
+}
