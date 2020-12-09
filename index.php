@@ -24,36 +24,11 @@ session_start();
 <body>
     <main>
         <div class="landing" style="background: url('./images/hero.jpg') no-repeat center; background-size: cover;">
-            <nav class="bor bor-expand-lg bor-light bg-light">
-                <a class="bor-brand" href="#" id="logo">Borga</a>
-                <button class="bor-toggler custom-toggler" type="button" data-toggle="collapse"
-                    data-target="#borNavDropdown" aria-controls="borNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="bor-toggler-icon"></span>
-                </button>
-                <div class="collapse bor-collapse" id="borNavDropdown">
-                    <ul class="bor-nav">
-                        <li class="b-item mr-auto">
-                            <?php
-                                    if(isset($_SESSION['NameEmail']))
-                                    {
-                                            echo '<h1>'.$_SESSION['NameEmail'].'</h1>';
+        
+        <?php include 'navbar.php';?>
 
-                                            echo '<a class="b-link" href="includes/logout.inc.php"> logout<img src="images/icons/user.png" alt=""
-                                    style="height: 0.85em;"> </a>';
-                                    }
-                                    else
-                                    {
-                                            echo '<a class="b-link" href="login.php">login <img src="images/icons/user.png" alt=""
-                                    style="height: 0.85em;"> </a>';
-                                    }
-                            ?>
-                          
-                        </li>
-
-                    </ul>
-                </div>
-            </nav>
+        
+    
             <h2 class="big-text">Borga's Portfolio</h2>
         </div>
         <div class="alt">
@@ -131,7 +106,7 @@ session_start();
         <h2 class="baslik">Write to me!</h2>
         <div id="form-main">
             <div id="form-div">
-                <form class="form" id="form1">
+                <form class="form" id="form1" action="includes/messageReceive.inc.php" method="POST">
 
                     <p class="name">
                         <input name="name" type="text" class="feedback-input" placeholder="Name" id="name" />
@@ -147,9 +122,10 @@ session_start();
 
 
                     <div class="submit">
-                        <input type="submit" value="SEND" id="button-blue" />
+                        <input type="submit" value="SEND" id="button-blue" onclick="return valLogin('errormsg','email','comment')"/>
                         <div class="ease"></div>
                     </div>
+                    <p id='errormsg'></p>
                 </form>
             </div>
         </div>
@@ -159,9 +135,18 @@ session_start();
             <div class="sol">
             </div>
             <div class="orta">
-            	<p>Atilla Borga Iskender</p>
-                <p>+905321725697</p>
-                <p>400446@student.fontys.nl</p>
+            <?php
+        include 'includes/autoloader.inc.php';
+        $ContactObj=new Contact();
+        $info=$ContactObj->getContactDetail();
+        foreach ($info as $key => $value) {
+            if ($key=="id") {
+                continue;
+            }
+            echo("<p>".$value."</p>");
+        }
+        
+        ?>
             </div>
             <div class="sag">
                 <ul class="social-icons">
@@ -193,6 +178,7 @@ session_start();
     <script src="js/tiny.js"></script>
     <script src="js/gsap.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/validation.js"></script>
 </body>
 
 </html>

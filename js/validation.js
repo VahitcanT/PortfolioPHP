@@ -21,3 +21,15 @@ const valRegister = (error, name, pwd, email) => {
   return true;
 
 }
+
+const valMessage = (error, name, email, message) => {
+  var name = document.getElementById(name).value;
+  var email = document.getElementById(name).value;
+  var message = document.getElementById(name).value;
+
+  if (!name || !email || !message) {
+    document.getElementById(error).innerHTML = "Please fill in all the information";
+    return false;
+  }
+  return true;
+}

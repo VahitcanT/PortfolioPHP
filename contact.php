@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,23 +20,8 @@
 </head>
 
 <body>
-    <nav class="bor bor-expand-lg bor-dark bg-dark">
-        <a class="bor-brand" href="#" style="color: black !important;" id="logo">Borga</a>
-        <button class="bor-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#borNavDropdown"
-            aria-controls="borNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="bor-toggler-icon"></span>
-        </button>
-        <div class="collapse bor-collapse" id="borNavDropdown">
-            <ul class="bor-nav">
-                <li class="b-item mr-auto">
-                    <a style="color: black !important;" class="b-link" href="login.html">login <img
-                            src="images/icons/user.png" alt="" style="height: 1em;">
-                    </a>
-                </li>
+<?php include 'navbar.php';?>
 
-            </ul>
-        </div>
-    </nav>
 
     <div class="resim">
         <svg viewBox="0 0 1032 742" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,10 +108,18 @@
         </svg>
     </div>
     <div class="contact">
-        <p>Allah</p>
-        <p>Allah1</p>
-        <p>Allah2</p>
-        <p>Allah3</p>
+        <?php
+        include 'includes/autoloader.inc.php';
+        $ContactObj=new Contact();
+        $info=$ContactObj->getContactDetail();
+        foreach ($info as $key => $value) {
+            if ($key=="id") {
+                continue;
+            }
+            echo("<p>".$value."</p>");
+        }
+        
+        ?>
     </div>
 
 

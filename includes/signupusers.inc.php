@@ -25,6 +25,11 @@
 			header("LOCATION: ../sign.php?signup=failed&error=existingAccount");
 			exit();
 		}
+		$existingAccount = new Login($name,$pwd);
+		if ($existingAccount ->CheckCredentials()) {
+			header("LOCATION: ../sign.php?signup=failed&error=existingAccount");
+			exit();
+		}
 
 		if( $user->signIntoDatabase()){
 			header("LOCATION: ../login.php?signup=success");

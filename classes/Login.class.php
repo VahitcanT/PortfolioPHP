@@ -20,6 +20,13 @@
 				return true;
 			}
 			return false;
-
+		}
+		public function CheckRole()
+		{
+			$sql = 'SELECT * FROM users WHERE Name = ? OR Email = ?;';
+			$stmt = $this->connect()->prepare($sql);
+			$stmt->execute([$this->NameOrEmail,$this->NameOrEmail]);
+			$row = $stmt->fetch();
+			return $row;
 		}
 	}

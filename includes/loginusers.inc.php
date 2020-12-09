@@ -1,4 +1,4 @@
-.<?php
+<?php
 if (isset($_POST['login'])){
 	include 'autoloader.inc.php';
 	
@@ -14,9 +14,18 @@ if (isset($_POST['login'])){
 	else
 	{
 		if($LoginObj->CheckCredentials()){
+
 		session_start();
 		$_SESSION['NameEmail'] = $NameOrEmail;
-		header('Location: ../index.php?login=success&name='.$NameOrEmail);
+
+		if ($LoginObj->CheckRole()["userLevel"]==1) {
+			$_SESSION["admin"]=true;
+			header('Location: ../admin.php?login=success&name='.$NameOrEmail);
+		}
+		else{
+
+			header('Location: ../index.php?login=success&name='.$NameOrEmail);
+		}
 		exit();
 		}
 		else 

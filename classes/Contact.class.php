@@ -5,7 +5,7 @@ class Contact extends dbh{
   {
     $sql = 'SELECT * FROM contact WHERE id=1;';
     $stmt = $this->connect()->prepare($sql);
-    $stmt->execute([$this->NameOrEmail,$this->NameOrEmail]);
+    $stmt->execute();
     $row = $stmt->fetch();	
     return $row;
   }
