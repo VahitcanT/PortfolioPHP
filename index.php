@@ -125,7 +125,7 @@ session_start();
                         <input type="submit" value="SEND" id="button-blue" onclick="return valLogin('errormsg','email','comment')"/>
                         <div class="ease"></div>
                     </div>
-                    <p id='errormsg'></p>
+                    <p id='errormsg' class="baslik"></p>
                 </form>
             </div>
         </div>
@@ -158,7 +158,7 @@ session_start();
             </div>
         </div>
     </footer>
-    <div class="intro">
+   <!--  <div class="intro">
         <div class="intro-text">
             <h1 class="hide">
                 <span class="text">Welcome</span>
@@ -171,12 +171,12 @@ session_start();
             </h1>
         </div>
     </div>
-    <div class="slider"></div>
+    <div class="slider"></div> -->
     <script src="js/jquery-3.5.1.slim.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="js/tiny.js"></script>
-    <script src="js/gsap.js"></script>
+    <!-- <script src="js/gsap.js"></script> -->
     <script src="js/index.js"></script>
     <script src="js/validation.js"></script>
 </body>

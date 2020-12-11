@@ -1,13 +1,16 @@
 <nav class="bor bor-expand-lg bor-light bg-light">
-                <a class="bor-brand" href="#" id="logo">Borga</a>
+                <a class="bor-brand" href="index.php" id="logo">Borga</a>
                 <button class="bor-toggler custom-toggler" type="button" data-toggle="collapse"
                     data-target="#borNavDropdown" aria-controls="borNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="bor-toggler-icon"></span>
                 </button>
                 <div class="collapse bor-collapse" id="borNavDropdown">
-                    <ul class="bor-nav">
-                        <li class="b-item mr-auto">
+                    <ul class="bor-nav  mr-auto">
+                        <li class="b-item">
+                            <a class="b-link" href="contact.php">Contact</a>
+                        </li>
+                        <li class="b-item">
                             <?php
                                     if(isset($_SESSION['NameEmail']))
                                     {

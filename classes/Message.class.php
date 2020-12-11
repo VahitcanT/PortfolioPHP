@@ -15,7 +15,6 @@ class Message extends dbh {
   {
     $sql = 'insert into messages (name,email,comment) values (?,?,?);';
     $stmt = $this->connect()->prepare($sql);
-    $stmt->execute([$this->name,$this->email,$this->message]);
     if($stmt->execute([$this->name,$this->email,$this->message])){
       return true;
     }
