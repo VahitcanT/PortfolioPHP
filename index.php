@@ -41,7 +41,7 @@ include 'includes/autoloader.inc.php';
             <div class="fiyu-fiyu">
                 <div class="my-slider">
                     <?php
-                    $slideObj=new Slide("","","");
+                    $slideObj=new Slide(0,"","","");
       
                     $slides=$slideObj->CardSelect();
               

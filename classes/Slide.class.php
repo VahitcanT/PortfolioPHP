@@ -1,11 +1,13 @@
 <?php
 class Slide extends dbh{
 
+  private $id;
   private $title;
   private $text;
   private $image;
 
-  function __construct(string $title , string $text,string $image){
+  function __construct(int $id,string $title , string $text,string $image){
+    $this->id=$id;
     $this->title = $title;
     $this->text = $text;
     $this->image = $image;
@@ -32,6 +34,15 @@ class Slide extends dbh{
       array_push($rows,$row);
   }
     return $rows;
+  }
+  public function CardUpdate()
+  {
+    $sql="update slide set title=?, text=?, image=? where id=?;";
+    $stmt = $this->connect()->prepare($sql);
+			if($stmt->execute([$this->title,$this->text,$this->image,$this->id])){
+				return true;
+			}
+			return false;
   }
 
 }

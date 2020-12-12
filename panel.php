@@ -4,6 +4,7 @@ if (!isset($_SESSION["admin"])) {
   header('Location: index.php');
 }
 $message="";
+include 'includes/autoloader.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +61,7 @@ $message="";
       <th>Comment</th>
     </tr>
     <?php
-      include 'includes/autoloader.inc.php';
+      
       
       $messageObj=new Message("","","");
       
@@ -77,9 +78,53 @@ $message="";
     
     ?>
   </table>
+
+  
+  <label for="slide">Choose a slide:</label>
+<select name="slide" id="slide">
+<option disabled selected value> -- select an option -- </option>
+<?php
+$slideObj=new Slide(0,"","","");
+      
+$slides=$slideObj->CardSelect();
+
+echo("<script>console.log(".$slides.")</script>");
+
+foreach ($slides as $key => $value) {
+
+  echo('<option value="'
+  .$value['id'].
+  '" onclick="updateSlide('.
+  "'{$value['id']}','{$value['title']}','{$value['text']}','{$value['image']}'"
+  .')">'.$value['title'].'</option>');
+}
+
+
+?>
+</select> 
+<form action="includes/updateSlide.inc.php" method="post">
+<input type="text" name="slideID" id="slideID" placeholder="Slide ID" hidden>
+<input type="text" name="slideTitle" id="slideTitle" placeholder="Slide Title"><br>
+<textarea name="slideText" id="slideText" cols="30" rows="10" placeholder="Slide Text"></textarea><br>
+<input type="text" name="slideImage" id="slideImage" placeholder="Slide Image"><br>
+<input class="buton" type="submit" name="slide" onclick="return valMessage('errormsg2','slideTitle','slideText','slideImage')">
+<p id="errormsg2"></p>
+
+
+</form>
 </section>
 <script src="js/validation.js">
 
+</script>
+<script >
+const updateSlide=(slideID,slideTitle,slideText,slideImage)=>{
+  // 
+  document.getElementById("slideID").value=slideID
+  document.getElementById("slideTitle").value=slideTitle
+  document.getElementById("slideText").value=slideText
+  document.getElementById("slideImage").value=slideImage
+  // console.log(a)
+}
 </script>
 </body>
 
