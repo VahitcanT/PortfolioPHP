@@ -25,6 +25,15 @@
                             ?>
                           
                         </li>
+                        <li class="b-item borga2">
+                        <?php
+                        if (isset($_SESSION["admin"])) {
+                            echo '<a class="b-link" href="panel.php"> Admin Panel</a>';
+                        }
+                        
+                        ?>
+                        
+                        </li>
                         <li class="b-item">
                             <a class="b-link" href="contact.php">Contact</a>
                         </li>
