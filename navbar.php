@@ -6,11 +6,9 @@
                     <span class="bor-toggler-icon"></span>
                 </button>
                 <div class="collapse bor-collapse" id="borNavDropdown">
-                    <ul class="bor-nav  mr-auto">
-                        <li class="b-item">
-                            <a class="b-link" href="contact.php">Contact</a>
-                        </li>
-                        <li class="b-item">
+                    <ul class="bor-nav mr-auto">
+                        
+                        <li class="b-item borga2">
                             <?php
                                     if(isset($_SESSION['NameEmail']))
                                     {
@@ -27,7 +25,9 @@
                             ?>
                           
                         </li>
-
+                        <li class="b-item">
+                            <a class="b-link" href="contact.php">Contact</a>
+                        </li>
                     </ul>
                 </div>
             </nav>

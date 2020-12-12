@@ -1,3 +1,9 @@
+.borga2{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     * {
@@ -725,9 +731,8 @@
     } */
 
     .mr-auto {
-        display: flex;
-        justify-content: space-around !important;
-        justify-items: end;
+        display: flex !important;
+        justify-content: start !important;
     }
 
     .bor-nav {

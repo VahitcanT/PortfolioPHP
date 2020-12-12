@@ -25,7 +25,11 @@ class Message extends dbh {
     $sql="select * from messages;";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute();
-    $rows = $stmt->fetch();
+
+    $rows = array();
+    while ($row=$stmt->fetch()) { // For each row
+      array_push($rows,$row);
+  }
     return $rows;
   }
 

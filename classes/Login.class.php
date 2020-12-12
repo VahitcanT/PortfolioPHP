@@ -27,6 +27,6 @@
 			$stmt = $this->connect()->prepare($sql);
 			$stmt->execute([$this->NameOrEmail,$this->NameOrEmail]);
 			$row = $stmt->fetch();
-			return $row;
+			return $row["userLevel"];
 		}
 	}

@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.table {
+  justify-content: center;
+}
+
+table {
+  border-style: solid;
+  border-color: black;
+  border-spacing: 4em 10px;
+  text-align: center;
+}
+
+/* input{
+display: block;
+justify-content: center;
+} */
+
+.table {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  border-style: solid;
+  border-color: black;
+  border-spacing: 4em 10px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+body h1 {
+  text-align: center;
+}
+
+
+
+.buton {
+  background-color: black;
+  color: whitesmoke;
+  padding: 10px;
+ font-size: 15px;
+  border: none;
+  cursor: pointer;
+align-self: auto;
+border-radius: 30px;
+text-align:center;
+
+
+}

@@ -18,9 +18,9 @@ if (isset($_POST['login'])){
 		session_start();
 		$_SESSION['NameEmail'] = $NameOrEmail;
 
-		if ($LoginObj->CheckRole()["userLevel"]==1) {
+		if ($LoginObj->CheckRole()==1) {
 			$_SESSION["admin"]=true;
-			header('Location: ../admin.php?login=success&name='.$NameOrEmail);
+			header('Location: ../panel.php?login=success&name='.$NameOrEmail);
 		}
 		else{
 
