@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'includes/autoloader.inc.php';
 ?>
 
 <!DOCTYPE php>
@@ -39,66 +40,26 @@ session_start();
             <!--  -->
             <div class="fiyu-fiyu">
                 <div class="my-slider">
-                    <div class="slide-item">
-                        <!-- cart -->
-                        <div class="card">
-                            <img src="images/html5-icon-13.jpg" class="card-img" alt="..."
-                                style="filter: contrast(20%);">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title display-3">C++</h5>
-                                <p class="card-text display-4 pt-3">I have more than 5 years of C++ experience and made many projects</p>
-                            </div>
-                        </div>
-                        <!-- cart -->
-                    </div>
-                    <div class="slide-item">
-                        <!-- cart -->
-                        <div class="card">
-                            <img src="images/css.webp" class="card-img" alt="..." style="filter: contrast(20%);">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">C#</h5>
-                                <p class="card-text">I have learned C# after 3 years ago and I have been tutoring students online all around the world</p>
-                            </div>
-                        </div>
-                        <!-- cart -->
-                    </div>
                     <?php
-                    
+                    $slideObj=new Slide("","","");
+      
+                    $slides=$slideObj->CardSelect();
+              
+                    foreach ($slides as $key => $value) {
+                      echo('<div class="slide-item">');
+                      echo('<div class="card">');
+                      echo('<img src="images/'.$value['image'].'" class="card-img" alt="..."
+                        style="filter: contrast(20%);">');
+                      echo('<div class="card-img-overlay">');
+                      echo('<h5 class="card-title display-3">'.$value['title'].'</h5>');
+                      echo('<p class="card-text display-4 pt-3">'.$value['text'].'</p>');
+
+                      echo('</div>');
+                      echo('</div>');
+                      echo('</div>');
+                    }                   
                     
                     ?>
-                    <div class="slide-item">
-                        <!-- cart -->
-                        <div class="card">
-                            <img src="images/flutterlogo.png" class="card-img" alt="..." style="filter: contrast(20%);">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">JavaScript</h5>
-                                <p class="card-text">I have learned JavaScript after learning C++ and been making front end parts of company websites</p>
-                            </div>
-                        </div>
-                        <!-- cart -->
-                    </div>
-                    <div class="slide-item">
-                        <!-- cart -->
-                        <div class="card">
-                            <img src="images/flutterlogo.png" class="card-img" alt="..." style="filter: contrast(20%);">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">Gaming</h5>
-                                <p class="card-text">I was a professional gamer and played in tournaments and have done some streaming</p>
-                            </div>
-                        </div>
-                        <!-- cart -->
-                    </div>
-                    <div class="slide-item">
-                        <!-- cart -->
-                        <div class="card">
-                            <img src="images/flutterlogo.png" class="card-img" alt="..." style="filter: contrast(20%);">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">Leadership</h5>
-                                <p class="card-text">Mostly I have been choosen leader of the project groups and developed a skill. Now I can easily manage a project and make everything goes according to plan</p>
-                            </div>
-                        </div>
-                        <!-- cart -->
-                    </div>
                 </div>
             </div>
         </div>
@@ -136,7 +97,7 @@ session_start();
             </div>
             <div class="orta">
             <?php
-        include 'includes/autoloader.inc.php';
+        
         $ContactObj=new Contact();
         $info=$ContactObj->getContactDetail();
         foreach ($info as $key => $value) {

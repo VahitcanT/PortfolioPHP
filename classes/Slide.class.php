@@ -21,10 +21,23 @@ class Slide extends dbh{
     }
     return false;
   }
+  public function CardSelect()
+  {
+    $sql="select * from slide;";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute();
+
+    $rows = array();
+    while ($row=$stmt->fetch()) { // For each row
+      array_push($rows,$row);
+  }
+    return $rows;
+  }
+
+}
 
   
   
-}
 
 
 
