@@ -29,4 +29,16 @@
 			$row = $stmt->fetch();
 			return $row["userLevel"];
 		}
+		public function CheckInfo()
+		{
+			$sql = 'SELECT * FROM users WHERE Name = ? OR Email = ?;';
+			$stmt = $this->connect()->prepare($sql);
+			$stmt->execute([$this->NameOrEmail,$this->NameOrEmail]);
+			$row = $stmt->fetch();	
+			if(password_verify($this->pwd,$row['Password'])) {
+
+				return $row;
+			}
+		}
+		
 	}

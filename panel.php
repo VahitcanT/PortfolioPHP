@@ -38,19 +38,8 @@ include 'includes/autoloader.inc.php';
     <input type="text" name="email" id="email" placeholder="Email">
     <input class="buton" type="submit" name="login" onclick="return valMessage('errormsg','name','number','email')">
 
-    <?php
-    if (isset($_GET["update"])) {
-      
-      if ($_GET["update"]=="success") {
-        $message="Contact detail updated succesfully";
-      }
-      if ($_GET["update"]=="failed") {
-        $message=$_GET["error"];
-      }
-    }
     
-    ?>
-    <p id="errormsg"><?php echo($message);?></p>
+    <p id="errormsg"></p>
   </form>
 
   <table>
@@ -112,6 +101,21 @@ foreach ($slides as $key => $value) {
 
 
 </form>
+
+<?php include 'infoUpdate.php';?>
+
+<?php
+    if (isset($_GET["update"])) {
+      
+      if ($_GET["update"]=="success") {
+        $message="Updated succesfully";
+      }
+      if ($_GET["update"]=="failed") {
+        $message=$_GET["error"];
+      }
+    }
+    echo($message);
+    ?>
 </section>
 <script src="js/validation.js">
 

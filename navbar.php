@@ -10,9 +10,9 @@
                         
                         <li class="b-item borga2">
                             <?php
-                                    if(isset($_SESSION['NameEmail']))
+                                    if(isset($_SESSION['Name']))
                                     {
-                                            echo '<h1>'.$_SESSION['NameEmail'].'</h1>';
+                                            echo '<h1>'.$_SESSION['Name'].'</h1>';
 
                                             echo '<a class="b-link" href="includes/logout.inc.php"> logout<img src="images/icons/user.png" alt=""
                                     style="height: 0.85em;"> </a>';
@@ -29,6 +29,10 @@
                         <?php
                         if (isset($_SESSION["admin"])) {
                             echo '<a class="b-link" href="panel.php"> Admin Panel</a>';
+                        }
+                        else{
+                            echo '<a class="b-link" href="userinfo.php"> User Panel</a>';
+
                         }
                         
                         ?>

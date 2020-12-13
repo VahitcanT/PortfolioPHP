@@ -16,7 +16,10 @@ if (isset($_POST['login'])){
 		if($LoginObj->CheckCredentials()){
 
 		session_start();
-		$_SESSION['NameEmail'] = $NameOrEmail;
+		$info=$LoginObj->CheckInfo();
+		$_SESSION['id']=$info['ID'];
+		$_SESSION['Name'] = $info['Name'];
+		$_SESSION['Email'] = $info['Email'];
 
 		if ($LoginObj->CheckRole()==1) {
 			$_SESSION["admin"]=true;
