@@ -77,7 +77,6 @@ $slideObj=new Slide(0,"","","");
       
 $slides=$slideObj->CardSelect();
 
-echo("<script>console.log(".$slides.")</script>");
 
 foreach ($slides as $key => $value) {
 
@@ -104,6 +103,36 @@ foreach ($slides as $key => $value) {
 
 <?php include 'infoUpdate.php';?>
 
+<h1>Change Admin Status</h1>
+<form action="includes/updateUserLevel.inc.php" method="post">
+<select name="users" id="users">
+<option disabled selected value> -- select a user -- </option>
+
+
+<?php
+$usersObj=new Usersview($_SESSION["id"]);
+
+$users=$usersObj->GetAllUsers();
+
+foreach ($users as $key => $value) {
+  echo('<option value="'
+  .$value['ID'].
+  '" onclick="updateAdminStatus('.
+  "'{$value['userLevel']}'"
+  .')" >'.$value['Name'].'</option>');
+}
+
+?>
+</select>
+<select name="userLevel" id="userLevel">
+<option disabled selected value> -- select user level -- </option>
+<option value="0">0</option>
+<option value="1">1</option>
+</select>
+<input type="submit" value="send" onclick="return userLevelValidation()">
+<p id="errormsgLevel"></p>
+</form>
+
 <?php
     if (isset($_GET["update"])) {
       
@@ -128,6 +157,17 @@ const updateSlide=(slideID,slideTitle,slideText,slideImage)=>{
   document.getElementById("slideText").value=slideText
   document.getElementById("slideImage").value=slideImage
   // console.log(a)
+}
+const updateAdminStatus=(id)=>{
+  document.getElementById("userLevel").value=id
+  
+}
+const userLevelValidation=()=>{
+  if (!document.getElementById("userLevel").value || !document.getElementById("users").value) {
+    document.getElementById("errormsgLevel").innerHTML="Check user first"
+    return false
+  }
+  return true
 }
 </script>
 </body>

@@ -31,7 +31,16 @@ class InfoUpdate extends dbh {
         return true;
       }
       return false;
-		}
+    }
+    public function updateUserLevel($level)
+    {
+      $sql="update users set userlevel=? where id=?;";
+      $stmt = $this->connect()->prepare($sql);
+			if($stmt->execute([$level,$this->id])){
+				return true;
+			}
+			return false;
+    }
 }
 
 
