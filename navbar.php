@@ -30,7 +30,7 @@
                         if (isset($_SESSION["admin"])) {
                             echo '<a class="b-link" href="panel.php"> Admin Panel</a>';
                         }
-                        else{
+                        else if(isset($_SESSION["Name"])){
                             echo '<a class="b-link" href="userinfo.php"> User Panel</a>';
 
                         }
