@@ -28,7 +28,9 @@ include 'includes/autoloader.inc.php';
 <body>
   <section class="bilgi">
   <?php include 'navbar.php';?>
-  <form name="LogInForm" action="includes/updateContact.inc.php" method="POST">
+  <div class="table"><div>
+
+    <form name="LogInForm" action="includes/updateContact.inc.php" method="POST">
     <h1>Contact details</h1>
     <p>Name and Surname</p>
     <input type="text" name="name" id="name" placeholder="Name and Surname">
@@ -37,12 +39,14 @@ include 'includes/autoloader.inc.php';
     <p>Email</p>
     <input type="text" name="email" id="email" placeholder="Email">
     <input class="buton" type="submit" name="login" onclick="return valMessage('errormsg','name','number','email')">
-
+    
     
     <p id="errormsg"></p>
   </form>
+</div></div>
+<div class="table">
 
-  <table>
+  <table >
     <tr>
       <th>Messages</th>
       <th>Name</th>
@@ -55,7 +59,7 @@ include 'includes/autoloader.inc.php';
       $messageObj=new Message("","","");
       
       $messages=$messageObj->displayMessages();
-
+      
       foreach ($messages as $key => $value) {
         echo("<tr>");
         echo("<td>".$value["id"]."</td>");
@@ -64,13 +68,15 @@ include 'includes/autoloader.inc.php';
         echo("<td>".$value["comment"]."</td>");
         echo("</tr>");
       }
-    
-    ?>
+      
+      ?>
   </table>
-
+</div>
   
-  <label for="slide">Choose a slide:</label>
-<select name="slide" id="slide">
+  <div class="table">
+    <div >
+      <label for="slide">Choose a slide:</label>
+      <select name="slide" id="slide">
 <option disabled selected value> -- select an option -- </option>
 <?php
 $slideObj=new Slide(0,"","","");
@@ -100,16 +106,23 @@ foreach ($slides as $key => $value) {
 
 
 </form>
-
-<?php include 'infoUpdate.php';?>
-
-<h1>Change Admin Status</h1>
-<form action="includes/updateUserLevel.inc.php" method="post">
-<select name="users" id="users">
-<option disabled selected value> -- select a user -- </option>
+</div>
+</div>
 
 
-<?php
+
+  <?php include 'infoUpdate.php';?>
+
+
+<div class="table"><div>
+
+  <h1>Change Admin Status</h1>
+  <form action="includes/updateUserLevel.inc.php" method="post">
+  <select name="users" id="users">
+    <option disabled selected value> -- select a user -- </option>
+    
+    
+    <?php
 $usersObj=new Usersview($_SESSION["id"]);
 
 $users=$usersObj->GetAllUsers();
@@ -125,13 +138,14 @@ foreach ($users as $key => $value) {
 ?>
 </select>
 <select name="userLevel" id="userLevel">
-<option disabled selected value> -- select user level -- </option>
-<option value="0">0</option>
-<option value="1">1</option>
+  <option disabled selected value> -- select user level -- </option>
+  <option value="0">0</option>
+  <option value="1">1</option>
 </select>
 <input type="submit" value="send" onclick="return userLevelValidation()">
 <p id="errormsgLevel"></p>
 </form>
+</div></div>
 
 <?php
     if (isset($_GET["update"])) {

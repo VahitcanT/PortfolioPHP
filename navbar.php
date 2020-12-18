@@ -25,7 +25,7 @@
                             ?>
                           
                         </li>
-                        <li class="b-item borga2">
+                        <li class="b-item">
                         <?php
                         if (isset($_SESSION["admin"])) {
                             echo '<a class="b-link" href="panel.php"> Admin Panel</a>';

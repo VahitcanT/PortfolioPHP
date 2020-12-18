@@ -64,61 +64,17 @@ include 'includes/autoloader.inc.php';
             </div>
         </div>
         <!-- form -->
-        <h2 class="baslik">Write to me!</h2>
-        <div id="form-main">
-            <div id="form-div">
-                <form class="form" id="form1" action="includes/messageReceive.inc.php" method="POST">
 
-                    <p class="name">
-                        <input name="name" type="text" class="feedback-input" placeholder="Name" id="name" />
-                    </p>
-
-                    <p class="email">
-                        <input name="email" type="text" class="feedback-input" id="email" placeholder="Email" />
-                    </p>
-
-                    <p class="text">
-                        <textarea name="text" class="feedback-input" id="comment" placeholder="Comment"></textarea>
-                    </p>
-
-
-                    <div class="submit">
-                        <input type="submit" value="SEND" id="button-blue" onclick="return valLogin('errormsg','email','comment')"/>
-                        <div class="ease"></div>
-                    </div>
-                    <p id='errormsg' class="baslik"></p>
-                </form>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div class="footer fiyu-fiyu" style="color: white;">
-            <div class="sol">
-            </div>
-            <div class="orta">
-            <?php
-        
-        $ContactObj=new Contact();
-        $info=$ContactObj->getContactDetail();
-        foreach ($info as $key => $value) {
-            if ($key=="id") {
-                continue;
+        <?php
+            if ($_SESSION["Name"]) {
+                include 'message.php';
             }
-            echo("<p>".$value."</p>");
-        }
-        
-        ?>
-            </div>
-            <div class="sag">
-                <ul class="social-icons">
-                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+            ?>
+    </main>
+    <?php
+    include 'footer.php';
+    ?>
+    
    <!--  <div class="intro">
         <div class="intro-text">
             <h1 class="hide">

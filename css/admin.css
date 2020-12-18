@@ -51,3 +51,8 @@ text-align:center;
 
 
 }
+
+
+.slide{
+  justify-content: space-around;
+}
