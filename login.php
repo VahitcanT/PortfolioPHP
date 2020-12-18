@@ -26,7 +26,14 @@
                 if($_GET['error'] == 'empty'){
                     echo '<p> Please fill in all the information </p>';
                 }
+                if($_GET['error'] == 'wrongInfo'){
+                    echo '<p> User does not exist </p>';
+                }
+                if($_GET['error'] == 'userDisabled'){
+                    echo '<p> User is disabled by admin </p>';
+                }
             }
+            
 
         ?>
     </div>

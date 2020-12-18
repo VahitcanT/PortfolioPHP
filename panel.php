@@ -35,9 +35,9 @@ include 'includes/autoloader.inc.php';
     <p>Name and Surname</p>
     <input type="text" name="name" id="name" placeholder="Name and Surname">
     <p>Number</p>
-    <input type="text" name="number" id="number" placeholder="Number">
+    <input type="number" name="number" id="number" placeholder="Number">
     <p>Email</p>
-    <input type="text" name="email" id="email" placeholder="Email">
+    <input type="email" name="email" id="email" placeholder="Email">
     <input class="buton" type="submit" name="login" onclick="return valMessage('errormsg','name','number','email')">
     
     
@@ -139,8 +139,9 @@ foreach ($users as $key => $value) {
 </select>
 <select name="userLevel" id="userLevel">
   <option disabled selected value> -- select user level -- </option>
-  <option value="0">0</option>
-  <option value="1">1</option>
+  <option value="-1">-1 (Disable account)</option>
+  <option value="0">0 (Normal user)</option>
+  <option value="1">1 (Admin)</option>
 </select>
 <input type="submit" value="send" onclick="return userLevelValidation()">
 <p id="errormsgLevel"></p>

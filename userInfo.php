@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'includes/autoloader.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +33,7 @@ $message="";
         $message=$_GET["error"];
       }
     }
+    
     echo($message);
     ?>
 <script src="js/validation.js"></script>

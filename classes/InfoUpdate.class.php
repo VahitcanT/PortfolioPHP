@@ -41,6 +41,17 @@ class InfoUpdate extends dbh {
 			}
 			return false;
     }
+    public function pwdUpdateTime()
+    {
+      $sql = 'SELECT pwdUpdateDate FROM users WHERE ID=?;';
+			$stmt = $this->connect()->prepare($sql);
+			$stmt->execute([$this->id]);
+      $rows = array();
+			while ($row=$stmt->fetch()) { // For each row
+				array_push($rows,$row);
+			}
+			return $rows;
+    }
 }
 
 
